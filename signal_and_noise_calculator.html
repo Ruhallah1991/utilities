@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signal and Noise Calculator</title>
+    <script>
+        function calculateSinValues() {
+            var peak = parseFloat(document.getElementById("sinPeak").value);
+            document.getElementById("sinPP").value = 2 * peak;
+            document.getElementById("sinRMS").value = peak / Math.sqrt(2);
+        }
+
+        function calculateNoiseValues() {
+            var noiseDensity = parseFloat(document.getElementById("noiseDensity").value);
+            var bw = parseFloat(document.getElementById("bw").value);
+            var rms = noiseDensity * Math.sqrt(bw);
+            var ppNoise = 6.6 * rms; // Approximation for Gaussian white noise
+            document.getElementById("noiseRMS").value = rms;
+            document.getElementById("noisePP").value = ppNoise;
+        }
+    </script>
+    <style>
+        input[type="number"] {
+            width: 100px;
+        }
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Signal and Noise Calculator</h1>
+
+    <section id="sinusoidal">
+        <h2>Sinusoidal Signal</h2>
+        <label>Peak Voltage: </label>
+        <input type="number" id="sinPeak">
+        <button onclick="calculateSinValues()">Calculate</button>
+        <p>Peak-to-Peak: <input type="text" id="sinPP" readonly></p>
+        <p>RMS: <input type="text" id="sinRMS" readonly></p>
+    </section>
+
+    <section id="noise">
+        <h2>Noise Signal</h2>
+        <label>Noise Density (V/√Hz): </label>
+        <input type="number" id="noiseDensity">
+        <label>Bandwidth (Hz): </label>
+        <input type="number" id="bw">
+        <button onclick="calculateNoiseValues()">Calculate</button>
+        <p>RMS Voltage (V): <input type="text" id="noiseRMS" readonly></p>
+        <p>Peak-to-Peak Noise (V): <input type="text" id="noisePP" readonly></p> <!-- New line for Peak-to-Peak Noise -->
+        <p>Note: RMS Voltage is calculated as Noise Density × √Bandwidth.</p>
+    </section>
+
+</body>
+</html>

@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RC Filter Calculator</title>
+  <title>Advanced RC Filter Calculator</title>
 </head>
 <body>
-  <h1>RC Filter Time Constant Calculator</h1>
+  <h1>Advanced RC Filter Calculator</h1>
 
-  <label for="resistance">Resistance (Ohms):</label>
+  <label for="resistance">Resistance Value:</label>
   <input type="number" id="resistance">
+  <select id="res_unit">
+    <option value="1">Ohm</option>
+    <option value="1e3">Kilo-Ohm</option>
+    <option value="1e6">Mega-Ohm</option>
+    <option value="1e9">Giga-Ohm</option>
+  </select>
   <br>
 
-  <label for="capacitance">Capacitance (Farads):</label>
+  <label for="capacitance">Capacitance Value:</label>
   <input type="number" id="capacitance">
+  <select id="cap_unit">
+    <option value="1">Farad</option>
+    <option value="1e-6">Micro-Farad</option>
+    <option value="1e-9">Nano-Farad</option>
+    <option value="1e-12">Pico-Farad</option>
+    <option value="1e-15">Femto-Farad</option>
+  </select>
   <br>
 
-  <button onclick="calculate()">Calculate Time Constant</button>
+  <button onclick="calculate()">Calculate</button>
 
   <p id="result"></p>
 
   <script src="calculator.js"></script>
 </body>
 </html>
-

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ADC Performance Metrics Calculator</title>
+  <script>
+    function calculateMetrics() {
+      var nBits = parseFloat(document.getElementById("nBits").value);
+      var signalAmplitude = parseFloat(document.getElementById("signalAmplitude").value);
+      var noiseAmplitude = parseFloat(document.getElementById("noiseAmplitude").value);
+      var distortionPower = parseFloat(document.getElementById("distortionPower").value);
+      var vRef = parseFloat(document.getElementById("vRef").value);
+      var fs = parseFloat(document.getElementById("fs").value);
+
+      var sinad = 20 * Math.log10(signalAmplitude / Math.sqrt(noiseAmplitude * noiseAmplitude + distortionPower));
+      var enob = (sinad - 1.76) / 6.02;
+      var snr = 20 * Math.log10(signalAmplitude / noiseAmplitude);
+      var thd = 20 * Math.log10(Math.sqrt(distortionPower) / signalAmplitude);
+      var nyquist = fs / 2;
+      var qNoise = vRef * vRef / (12 * Math.pow(2, 2 * nBits));
+
+      document.getElementById("sinad").value = sinad.toFixed(2);
+      document.getElementById("enob").value = enob.toFixed(2);
+      document.getElementById("snr").value = snr.toFixed(2);
+      document.getElementById("thd").value = thd.toFixed(2);
+      document.getElementById("nyquist").value = nyquist.toFixed(2);
+      document.getElementById("qNoise").value = qNoise.toFixed(6);
+    }
+  </script>
+</head>
+<body>
+
+  <h1>ADC Performance Metrics Calculator</h1>
+
+  <label for="nBits">Number of Bits (N):</label>
+  <input type="number" id="nBits" name="nBits"><br><br>
+
+  <label for="signalAmplitude">Signal Amplitude:</label>
+  <input type="number" id="signalAmplitude" name="signalAmplitude"><br><br>
+
+  <label for="noiseAmplitude">Noise Amplitude:</label>
+  <input type="number" id="noiseAmplitude" name="noiseAmplitude"><br><br>
+
+  <label for="distortionPower">Distortion Power:</label>
+  <input type="number" id="distortionPower" name="distortionPower"><br><br>
+
+  <label for="vRef">Reference Voltage (Vref):</label>
+  <input type="number" id="vRef" name="vRef"><br><br>
+
+  <label for="fs">Sampling Rate (Fs):</label>
+  <input type="number" id="fs" name="fs"><br><br>
+
+  <button onclick="calculateMetrics()">Calculate</button>
+
+  <h2>Results:</h2>
+  <p>SINAD: <input type="text" id="sinad" readonly></p>
+  <p>ENOB: <input type="text" id="enob" readonly></p>
+  <p>SNR: <input type="text" id="snr" readonly></p>
+  <p>THD: <input type="text" id="thd" readonly></p>
+  <p>Nyquist Frequency: <input type="text" id="nyquist" readonly></p>
+  <p>Quantization Noise Power: <input type="text" id="qNoise" readonly></p>
+
+</body>
+</html>

@@ -21,9 +21,9 @@ function calculate() {
     result += "Filter Corner Frequency: " + freq + " Hz<br>";
     result += "Rise Time (10% to 90%): " + riseTime + " seconds<br>";
 
-    result += "Time at 3\u03C4: " + time3tau + " seconds, " + (100 - settling3tau).toFixed(2) + "% completed<br>";
-    result += "Time at 4\u03C4: " + time4tau + " seconds, " + (100 - settling4tau).toFixed(2) + "% completed<br>";
-    result += "Time at 5\u03C4: " + time5tau + " seconds, " + (100 - settling5tau).toFixed(2) + "% completed";
+    result += "Amplitude at 3\u03C4: " + time3tau + " seconds, " + (100 - settling3tau).toFixed(2) + "% completed<br>";
+    result += "Amplitude at 4\u03C4: " + time4tau + " seconds, " + (100 - settling4tau).toFixed(2) + "% completed<br>";
+    result += "Amplitude at 5\u03C4: " + time5tau + " seconds, " + (100 - settling5tau).toFixed(2) + "% completed";
 
     document.getElementById("result").innerHTML = result;
   } else {

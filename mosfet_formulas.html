@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>MOSFET Formulas</title>
-  <link rel="stylesheet" href="mosfet_styles.css">
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
   </script>
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; margin: 20px; padding: 0;">
 
-  <h1>MOSFET Current Formulas</h1>
+  <h1 style="color: #333;">MOSFET Current Formulas</h1>
 
   <section id="nmos">
-    <h2>NMOS</h2>
-    <p class="formula">Subthreshold: \( I_D = I_0 \cdot e^{\frac{V_{GS}}{V_T}} \)</p>
-    <p class="formula">Saturation: \( I_D = \frac{1}{2} \cdot \mu_n \cdot C_{ox} \cdot \frac{W}{L} \cdot (V_{GS} - V_{th})^2 \)</p>
-    <p class="formula">Linear: \( I_D = \mu_n \cdot C_{ox} \cdot \frac{W}{L} \cdot ((V_{GS} - V_{th})V_{DS} - \frac{V_{DS}^2}{2}) \)</p>
+    <h2 style="color: #333;">NMOS</h2>
+    <p style="background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; margin-bottom: 10px;">Subthreshold: \( I_D = I_0 \cdot e^{\frac{V_{GS}}{V_T}} \)</p>
+    <p style="background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; margin-bottom: 10px;">Saturation: \( I_D = \frac{1}{2} \cdot \mu_n \cdot C_{ox} \cdot \frac{W}{L} \cdot (V_{GS} - V_{th})^2 \)</p>
+    <p style="background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; margin-bottom: 10px;">Linear: \( I_D = \mu_n \cdot C_{ox} \cdot \frac{W}{L} \cdot ((V_{GS} - V_{th})V_{DS} - \frac{V_{DS}^2}{2}) \)</p>
   </section>
 
   <section id="pmos">
-    <h2>PMOS</h2>
-    <p class="formula">Subthreshold: \( I_D = I_0 \cdot e^{-\frac{V_{SG}}{V_T}} \)</p>
-    <p class="formula">Saturation: \( I_D = -\frac{1}{2} \cdot \mu_p \cdot C_{ox} \cdot \frac{W}{L} \cdot (V_{SG} - |V_{th}|)^2 \)</p>
-    <p class="formula">Linear: \( I_D = -\mu_p \cdot C_{ox} \cdot \frac{W}{L} \cdot ((V_{SG} - |V_{th}|)V_{SD} - \frac{V_{SD}^2}{2}) \)</p>
+    <h2 style="color: #333;">PMOS</h2>
+    <p style="background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; margin-bottom: 10px;">Subthreshold: \( I_D = I_0 \cdot e^{-\frac{V_{SG}}{V_T}} \)</p>
+    <p style="background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; margin-bottom: 10px;">Saturation: \( I_D = -\frac{1}{2} \cdot \mu_p \cdot C_{ox} \cdot \frac{W}{L} \cdot (V_{SG} - |V_{th}|)^2 \)</p>
+    <p style="background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; margin-bottom: 10px;">Linear: \( I_D = -\mu_p \cdot C_{ox} \cdot \frac{W}{L} \cdot ((V_{SG} - |V_{th}|)V_{SD} - \frac{V_{SD}^2}{2}) \)</p>
   </section>
 
 </body>
 </html>
-

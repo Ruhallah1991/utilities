@@ -16,14 +16,17 @@
       var snr = 20 * Math.log10(signalAmplitude / noiseAmplitude);
       var thd = 20 * Math.log10(Math.sqrt(distortionPower) / signalAmplitude);
       var nyquist = fs / 2;
-      var qNoise = vRef * vRef / (12 * Math.pow(2, 2 * nBits));
-
+	  var twoPower = Math.pow(2, 2 * nBits);
+	  var qNoise = (vRef * vRef) / (12 * twoPower);
+	  var qNoiseAmplitude = Math.sqrt(qNoise);
       document.getElementById("sinad").value = sinad.toFixed(2);
       document.getElementById("enob").value = enob.toFixed(2);
       document.getElementById("snr").value = snr.toFixed(2);
       document.getElementById("thd").value = thd.toFixed(2);
       document.getElementById("nyquist").value = nyquist.toFixed(2);
-      document.getElementById("qNoise").value = qNoise.toFixed(6);
+	  document.getElementById("qNoise").value = qNoise.toExponential(6);
+	  document.getElementById("qNoiseAmplitude").value = qNoiseAmplitude.toExponential(6);
+
     }
   </script>
 </head>
@@ -72,6 +75,8 @@
   <p>THD: <input type="text" id="thd" readonly></p>
   <p>Nyquist Frequency: <input type="text" id="nyquist" readonly></p>
   <p>Quantization Noise Power: <input type="text" id="qNoise" readonly></p>
+  <p>Quantization Noise Amplitude: <input type="text" id="qNoiseAmplitude" readonly></p>
+
 
 </body>
 </html>

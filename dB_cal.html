@@ -12,6 +12,8 @@
 
 <h1>dB Calculator</h1>
 
+<h2>Forward Calculation</h2>
+
 <h2>Power</h2>
 <input type="number" id="power" placeholder="Enter power">
 <input type="number" id="carrierPower" placeholder="Enter carrier power for dBc">
@@ -35,6 +37,20 @@
 </select>
 <button onclick="calculateVoltage()">Calculate</button>
 <p id="voltageResult"></p>
+
+<h2>Reverse Calculation</h2>
+
+<h3>Power</h3>
+<input type="number" id="dbPower" placeholder="Enter dB">
+<input type="number" id="dbmPower" placeholder="Enter dBm">
+<input type="number" id="dbcPower" placeholder="Enter dBc">
+<button onclick="reverseCalculatePower()">Reverse Calculate</button>
+<p id="reversePowerResult"></p>
+
+<h3>Voltage</h3>
+<input type="number" id="dbVoltage" placeholder="Enter dBV">
+<button onclick="reverseCalculateVoltage()">Reverse Calculate</button>
+<p id="reverseVoltageResult"></p>
 
 <script>
   function calculatePower() {
@@ -60,6 +76,31 @@
 
     document.getElementById('voltageResult').innerHTML = `dBV: ${dBV.toFixed(2)}, dBu: ${dBu.toFixed(2)}, dBZ: ${dBZ.toFixed(2)}`;
   }
+  
+ function toEngineeringNotation(num) {
+    var exponent = Math.floor(Math.log10(Math.abs(num)));
+    var mantissa = num / Math.pow(10, exponent);
+    return `${mantissa.toFixed(4)}e${exponent}`;
+  }
+
+  function reverseCalculatePower() {
+    var db = parseFloat(document.getElementById('dbPower').value);
+    var dbm = parseFloat(document.getElementById('dbmPower').value);
+    var dbc = parseFloat(document.getElementById('dbcPower').value);
+
+    var power = Math.pow(10, (db / 10));
+    var powerM = Math.pow(10, (dbm / 10)) / 1000;  // Convert to Watts
+    var powerC = Math.pow(10, (dbc / 10));  // Relative to carrier power
+
+    document.getElementById('reversePowerResult').innerHTML = `Power: ${toEngineeringNotation(power)} Watts, dBm: ${toEngineeringNotation(powerM)} Watts, dBc: ${toEngineeringNotation(powerC)} (Relative)`;
+  }
+
+  function reverseCalculateVoltage() {
+    var dbV = parseFloat(document.getElementById('dbVoltage').value);
+    var voltage = Math.pow(10, (dbV / 20));
+    document.getElementById('reverseVoltageResult').innerHTML = `Voltage: ${toEngineeringNotation(voltage)} Volts`;
+  }
+
 </script>
 
 </body>

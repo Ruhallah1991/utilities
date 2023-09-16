@@ -3,19 +3,41 @@
 <head>
     <title>Signal and Noise Calculator</title>
     <script>
+        function toEngFormat(num) {
+            return num.toExponential(2);
+        }
+
         function calculateSinValues() {
             var peak = parseFloat(document.getElementById("sinPeak").value);
-            document.getElementById("sinPP").value = 2 * peak;
-            document.getElementById("sinRMS").value = peak / Math.sqrt(2);
+            var unit = document.getElementById("sinUnit").value;
+            var multiplier = {
+                "V": 1,
+                "mV": 1e-3,
+                "uV": 1e-6,
+                "nV": 1e-9,
+                "pV": 1e-12
+            };
+
+            var peakInVolts = peak * multiplier[unit];
+            document.getElementById("sinPP").value = toEngFormat(2 * peakInVolts);
+            document.getElementById("sinRMS").value = toEngFormat(peakInVolts / Math.sqrt(2));
         }
 
         function calculateNoiseValues() {
             var noiseDensity = parseFloat(document.getElementById("noiseDensity").value);
             var bw = parseFloat(document.getElementById("bw").value);
-            var rms = noiseDensity * Math.sqrt(bw);
-            var ppNoise = 6.6 * rms; // Approximation for Gaussian white noise
-            document.getElementById("noiseRMS").value = rms;
-            document.getElementById("noisePP").value = ppNoise;
+            var unit = document.getElementById("noiseUnit").value;
+            var multiplier = {
+                "V/√Hz": 1,
+                "mV/√Hz": 1e-3,
+                "uV/√Hz": 1e-6
+            };
+
+            var noiseDensityInVolts = noiseDensity * multiplier[unit];
+            var rms = noiseDensityInVolts * Math.sqrt(bw);
+            var ppNoise = 6.6 * rms;
+            document.getElementById("noiseRMS").value = toEngFormat(rms);
+            document.getElementById("noisePP").value = toEngFormat(ppNoise);
         }
     </script>
     <style>
@@ -35,6 +57,13 @@
         <h2>Sinusoidal Signal</h2>
         <label>Peak Voltage: </label>
         <input type="number" id="sinPeak">
+        <select id="sinUnit">
+            <option value="V">V</option>
+            <option value="mV">mV</option>
+            <option value="uV">µV</option>
+            <option value="nV">nV</option>
+            <option value="pV">pV</option>
+        </select>
         <button onclick="calculateSinValues()">Calculate</button>
         <p>Peak-to-Peak: <input type="text" id="sinPP" readonly></p>
         <p>RMS: <input type="text" id="sinRMS" readonly></p>
@@ -42,14 +71,18 @@
 
     <section id="noise">
         <h2>Noise Signal</h2>
-        <label>Noise Density (V/√Hz): </label>
+        <label>Noise Density: </label>
         <input type="number" id="noiseDensity">
+        <select id="noiseUnit">
+            <option value="V/√Hz">V/√Hz</option>
+            <option value="mV/√Hz">mV/√Hz</option>
+            <option value="uV/√Hz">µV/√Hz</option>
+        </select>
         <label>Bandwidth (Hz): </label>
         <input type="number" id="bw">
         <button onclick="calculateNoiseValues()">Calculate</button>
         <p>RMS Voltage (V): <input type="text" id="noiseRMS" readonly></p>
-        <p>Peak-to-Peak Noise (V): <input type="text" id="noisePP" readonly></p> <!-- New line for Peak-to-Peak Noise -->
-        <p>Note: RMS Voltage is calculated as Noise Density × √Bandwidth.</p>
+        <p>Peak-to-Peak Noise (V): <input type="text" id="noisePP" readonly></p>
     </section>
 
 </body>

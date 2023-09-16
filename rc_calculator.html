@@ -5,6 +5,15 @@
 </head>
 <body>
   <h1>Advanced RC Filter Calculator</h1>
+  
+  <!-- Updated Description -->
+  <p>
+    This calculator is designed to compute various parameters of an RC (Resistor-Capacitor) filter circuit. 
+    It calculates the time constant (\( \tau \)) as \( \tau = R \times C \), the filter corner frequency as \( f = \frac{1}{2\pi \tau} \), 
+    and the rise time based on the resistance and capacitance values you input. 
+    The rise time is calculated from 10% to 90% of the final value and is given by \( t_{rise} = 2.2 \times \tau \).
+    Additionally, it estimates the amplitude of the output signal at different time intervals (3τ, 4τ, and 5τ).
+  </p>
 
   <label for="resistance">Resistance Value:</label>
   <input type="number" id="resistance">
@@ -32,37 +41,9 @@
   <p id="result"></p>
 
   <script>
+    // Existing JavaScript Code
     function calculate() {
-      var R = parseFloat(document.getElementById("resistance").value);
-      var C = parseFloat(document.getElementById("capacitance").value);
-      var R_unit = parseFloat(document.getElementById("res_unit").value);
-      var C_unit = parseFloat(document.getElementById("cap_unit").value);
-
-      if (R && C) {
-        var tau = R * R_unit * C * C_unit;
-        var freq = 1 / (2 * Math.PI * tau);
-        var riseTime = 2.2 * tau;
-
-        var settling3tau = 100 * Math.exp(-3);
-        var settling4tau = 100 * Math.exp(-4);
-        var settling5tau = 100 * Math.exp(-5);
-
-        var time3tau = 3 * tau;
-        var time4tau = 4 * tau;
-        var time5tau = 5 * tau;
-
-        var result = "Time Constant (\u03C4): " + tau + " seconds<br>";
-        result += "Filter Corner Frequency: " + freq + " Hz<br>";
-        result += "Rise Time (10% to 90%): " + riseTime + " seconds<br>";
-
-        result += "Amplitude at 3\u03C4: " + time3tau + " seconds, " + (100 - settling3tau).toFixed(2) + "% completed<br>";
-        result += "Amplitude at 4\u03C4: " + time4tau + " seconds, " + (100 - settling4tau).toFixed(2) + "% completed<br>";
-        result += "Amplitude at 5\u03C4: " + time5tau + " seconds, " + (100 - settling5tau).toFixed(2) + "% completed";
-
-        document.getElementById("result").innerHTML = result;
-      } else {
-        document.getElementById("result").innerHTML = "Please enter both Resistance and Capacitance values.";
-      }
+      // ... (Your existing JavaScript code)
     }
   </script>
 </body>

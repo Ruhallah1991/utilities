@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>dB Calculator</title>
+  <style>
+    input {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>dB Calculator</h1>
+
+<h2>Power</h2>
+<input type="number" id="power" placeholder="Enter power">
+<select id="powerUnit">
+  <option value="1">Watt</option>
+  <option value="0.001">Milliwatt</option>
+  <option value="0.000001">Microwatt</option>
+  <option value="0.000000001">Nanowatt</option>
+</select>
+<button onclick="calculatePower()">Calculate</button>
+<p id="powerResult"></p>
+
+<h2>Voltage</h2>
+<input type="number" id="voltage" placeholder="Enter voltage">
+<select id="voltageUnit">
+  <option value="1">Volt</option>
+  <option value="0.001">Millivolt</option>
+  <option value="0.000001">Microvolt</option>
+  <option value="0.000000001">Nanovolt</option>
+</select>
+<button onclick="calculateVoltage()">Calculate</button>
+<p id="voltageResult"></p>
+
+<script>
+  function calculatePower() {
+    var power = parseFloat(document.getElementById('power').value);
+    var unit = parseFloat(document.getElementById('powerUnit').value);
+    var dB = 10 * Math.log10(power / unit);
+
+    var dBm = 10 * Math.log10(power / 0.001);
+    
+    document.getElementById('powerResult').innerHTML = `dB: ${dB.toFixed(2)}, dBm: ${dBm.toFixed(2)}`;
+  }
+
+  function calculateVoltage() {
+    var voltage = parseFloat(document.getElementById('voltage').value);
+    var unit = parseFloat(document.getElementById('voltageUnit').value);
+    var dBV = 20 * Math.log10(voltage / unit);
+
+    var dBu = 20 * Math.log10(voltage / 0.775);
+    
+    document.getElementById('voltageResult').innerHTML = `dBV: ${dBV.toFixed(2)}, dBu: ${dBu.toFixed(2)}`;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RF CMOS Linearity Metrics and Formulas</title>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body>
+
+<h1>RF CMOS Linearity Metrics and Formulas</h1>
+
+<h2>IP3 (Third-Order Intercept Point)</h2>
+<p>Measures how a system handles third-order intermodulation distortion (IMD3).</p>
+<p>\[
+IP3 = P_{out} + \frac{1}{2}(P_{out} - P_{3rd})
+\]</p>
+<p><strong>Units</strong>: dBm</p>
+
+<h2>1-dB Compression Point (P1dB)</h2>
+<p>Output power level at which the system deviates from linear behavior by 1 dB.</p>
+<p>\[
+P_{out} = P_{in} + Gain \quad (\text{linear region}) \\
+P_{out} = P_{in} + Gain - 1 \quad (\text{at 1-dB compression})
+\]</p>
+<p><strong>Units</strong>: dBm</p>
+
+<h2>IP2 (Second-Order Intercept Point)</h2>
+<p>Indicates how a system handles second-order intermodulation distortion.</p>
+<p>\[
+IP2 = P_{out} + \frac{1}{2}(P_{out} - P_{2nd})
+\]</p>
+<p><strong>Units</strong>: dBm</p>
+
+<h2>Spurious-Free Dynamic Range (SFDR)</h2>
+<p>Measures the difference between the desired signal and the strongest undesired signal.</p>
+<p>\[
+SFDR = P_{signal} - P_{spurious}
+\]</p>
+<p><strong>Units</strong>: dB</p>
+
+<h2>Harmonic Distortion (HD)</h2>
+<p>Evaluates how much a circuit produces harmonics of the input frequencies.</p>
+<p>\[
+HD = \frac{P_{harmonic}}{P_{fundamental}}
+\]</p>
+<p><strong>Units</strong>: Ratio or dB</p>
+
+<h2>OIP3 and IIP3</h2>
+<p>Output and input-referred third-order intercept points, respectively.</p>
+<p>\[
+OIP3 = P_{out} + \frac{(P_{out} - P_{3rd})}{2} \\
+IIP3 = OIP3 - Gain
+\]</p>
+<p><strong>Units</strong>: dBm</p>
+
+<h2>HD2 and HD3</h2>
+<p>Second and third harmonic distortions, respectively.</p>
+<p>\[
+HD2 = \frac{P_{2nd harmonic}}{P_{fundamental}} \\
+HD3 = \frac{P_{3rd harmonic}}{P_{fundamental}}
+\]</p>
+<p><strong>Units</strong>: Ratio or dB</p>
+
+<h2>IM2 and IM3</h2>
+<p>Second and third intermodulation products.</p>
+<p>\[
+IM2 = 2f_1 \pm f_2 \\
+IM3 = 2f_1 \pm f_2, 2f_2 \pm f_1
+\]</p>
+<p><strong>Units</strong>: Frequency (Hz)</p>
+
+<h2>TOI (Third Order Input)</h2>
+<p>Another measure of linearity that quantifies how the amplitude of third-order intermodulation products grows.</p>
+<p>\[
+TOI = P_{in} + \frac{(P_{out} - P_{3rd})}{2}
+\]</p>
+<p><strong>Units</strong>: dBm</p>
+
+<h2>IMD (Intermodulation Distortion)</h2>
+<p>Measures the unwanted signals generated when two or more signals are present.</p>
+<p>\[
+IMD = 20 \times \log\left(\frac{P_{out}}{P_{IMD}}\right)
+\]</p>
+<p><strong>Units</strong>: dB</p>
+
+</body>
+</html>

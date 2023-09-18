@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Logic Timing Analysis</title>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body>
+
+<h1>Digital Logic Timing Analysis</h1>
+
+<h2>Overview</h2>
+<p>
+Timing analysis ensures that digital circuits operate reliably over all permissible conditions. It's vital in understanding the behavior of synchronous digital systems.
+</p>
+
+<h2>Setup Time (T<sub>setup</sub>)</h2>
+<p>
+The setup time is the minimum amount of time that the data signal should be stable before the clock edge arrives.
+</p>
+<p>
+\[
+T_{setup} \leq T_{clock} - T_{clk-q} - T_{comb}
+\]
+</p>
+
+<h2>Hold Time (T<sub>hold</sub>)</h2>
+<p>
+Hold time is the minimum amount of time that the data signal needs to remain stable after the clock edge has occurred.
+</p>
+<p>
+\[
+T_{hold} \leq T_{clk-q} + T_{comb}
+\]
+</p>
+
+<h2>Clock-to-Q Delay (T<sub>clk-q</sub>)</h2>
+<p>
+Clock-to-Q Delay is the time it takes for a flip-flop to propagate its input (D) to its output (Q) after a clock edge.
+</p>
+
+<h2>Combinational Delay (T<sub>comb</sub>)</h2>
+<p>
+Combinational Delay is the delay incurred by a combinational logic block in the circuit.
+</p>
+
+<h2>Contamination Delay (T<sub>cd</sub>)</h2>
+<p>
+Contamination Delay refers to the minimum time after the clock edge when the data output may begin to change.
+</p>
+<p>
+\[
+T_{hold} \leq T_{cd} + T_{comb}
+\]
+</p>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMOS Formulas</title>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+
+    <h1>CMOS Formulas Overview</h1>
+    <p>CMOS (Complementary Metal-Oxide-Semiconductor) transistors are foundational in integrated circuit design.</p>
+
+    <h2>Transconductance (gm)</h2>
+    <p>For NMOS and PMOS:</p>
+    <p>\[
+    gm = \frac{2I_D}{V_{GS} - V_{TH}}
+    \]</p>
+    <p>Where \(I_D\) is the drain current, \(V_{GS}\) is the gate-to-source voltage, and \(V_{TH}\) is the threshold voltage.</p>
+
+    <h2>Output Resistance (ro)</h2>
+    <p>\[
+    ro = \frac{1}{\lambda I_D}
+    \]</p>
+    <p>Where \(\lambda\) is the channel-length modulation parameter and \(I_D\) is the drain current.</p>
+
+    <h2>Drain-to-Source Conductance (gds)</h2>
+    <p>\[
+    gds = \lambda I_D
+    \]</p>
+    <p>Where \(\lambda\) and \(I_D\) are the same as above.</p>
+
+    <h2>Body Effect Transconductance (gmb)</h2>
+    <p>\[
+    gmb = \frac{gm}{\sqrt{1 + 2\phi_f / (V_{SB} + 2\phi_f)}}
+    \]</p>
+    <p>Where \(\phi_f\) is the Fermi potential and \(V_{SB}\) is the source-to-body voltage.</p>
+
+    <h2>Additional Definitions of Transconductance</h2>
+
+    <h3>In Saturation</h3>
+    <p>\[
+    gm = \sqrt{2 \mu C_{ox} \frac{W}{L} I_D}
+    \]</p>
+    <p>Where \(\mu\) is the carrier mobility, \(C_{ox}\) is the oxide capacitance, \(W\) and \(L\) are the width and length of the transistor channel, and \(I_D\) is the drain current.</p>
+
+    <h3>In Triode</h3>
+    <p>\[
+    gm = \mu C_{ox} \frac{W}{L} (V_{GS} - V_{TH} - V_{DS})
+    \]</p>
+    <p>Where \(V_{DS}\) is the drain-to-source voltage and other parameters are as defined above.</p>
+
+    <h3>Weak Inversion</h3>
+    <p>\[
+    gm = \frac{I_D}{nV_T}
+    \]</p>
+    <p>Where \(n\) is the subthreshold slope factor and \(V_T\) is the thermal voltage.</p>
+
+    <h3>Strong Inversion</h3>
+    <p>\[
+    gm = \frac{2I_D}{V_{GS} - V_{TH}}
+    \]</p>
+    <p>Same as the general expression but specifically for the strong inversion region.</p>
+
+    <h3>JFETs and Other Devices</h3>
+    <p>\[
+    gm = \frac{2I_D}{V_{P}}
+    \]</p>
+    <p>Where \(V_{P}\) is the pinch-off voltage.</p>
+
+</body>
+</html>

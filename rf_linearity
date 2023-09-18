@@ -47,6 +47,13 @@ HD = \frac{P_{harmonic}}{P_{fundamental}}
 \]</p>
 <p><strong>Units</strong>: Ratio or dB</p>
 
+<h2>THD (Total Harmonic Distortion)</h2>
+<p>Quantifies the extent to which a signal is distorted by its harmonics, considering all harmonics together.</p>
+<p>\[
+THD = \sqrt{\sum_{n=2}^{N} (HD_{n})^{2}}
+\]</p>
+<p><strong>Units</strong>: Ratio or dB</p>
+
 <h2>OIP3 and IIP3</h2>
 <p>Output and input-referred third-order intercept points, respectively.</p>
 <p>\[

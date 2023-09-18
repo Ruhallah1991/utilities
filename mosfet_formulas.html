@@ -2,31 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MOSFET Formulas</title>
+  <title>MOSFET Operation Formulas</title>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; padding: 0; }
-    h1, h2 { color: #333; }
-    p { background: #f9f9f9; padding: 10px; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; }
-  </style>
 </head>
 <body>
 
-  <h1>MOSFET Current Formulas</h1>
+  <h1>MOSFET Operation Formulas</h1>
 
   <section id="nmos">
     <h2>NMOS</h2>
-    <p>Subthreshold: \( I_D = I_0 \cdot e^{\frac{V_{GS} - V_{th}}{n \cdot V_T}} \cdot (1 - e^{-\frac{V_{DS}}{S \cdot V_T}}) \cdot (1 + \lambda \cdot V_{DS}) \)</p>
-    <p>Saturation (with Channel Length Modulation): \( I_D = \frac{1}{2} \cdot \mu_n \cdot C_{ox} \cdot \frac{W}{L} \cdot (V_{GS} - V_{th})^2 \cdot (1 + \lambda \cdot V_{DS}) \)</p>
-    <p>Linear (with Channel Length Modulation): \( I_D = \mu_n \cdot C_{ox} \cdot \frac{W}{L} \cdot ((V_{GS} - V_{th})V_{DS} - \frac{V_{DS}^2}{2}) \cdot (1 + \lambda \cdot V_{DS}) \)</p>
+    
+    <h3>Subthreshold</h3>
+    <p>\( I_D = I_0 \cdot e^{\frac{V_{GS} - V_{th}}{n \cdot V_T}} \cdot (1 - e^{-\frac{V_{DS}}{S \cdot V_T}}) \cdot (1 + \lambda \cdot V_{DS}) \)</p>
+
+    <h3>Saturation</h3>
+    <p>\( I_D = \frac{1}{2} \cdot \mu_n \cdot C_{ox} \cdot \frac{W}{L} \cdot (V_{GS} - V_{th})^2 \cdot (1 + \lambda \cdot V_{DS}) \)</p>
+    <p>Condition: \( V_{DS} \geq V_{GS} - V_{th} \)</p>
+
+    <h3>Linear</h3>
+    <p>\( I_D = \mu_n \cdot C_{ox} \cdot \frac{W}{L} \cdot ((V_{GS} - V_{th})V_{DS} - \frac{V_{DS}^2}{2}) \cdot (1 + \lambda \cdot V_{DS}) \)</p>
+    <p>Condition: \( V_{DS} < V_{GS} - V_{th} \)</p>
   </section>
 
   <section id="pmos">
     <h2>PMOS</h2>
-    <p>Subthreshold: \( I_D = -I_0 \cdot e^{\frac{V_{SG} - |V_{th}|}{n \cdot V_T}} \cdot (1 - e^{-\frac{V_{SD}}{S \cdot V_T}}) \cdot (1 + \lambda \cdot V_{SD}) \)</p>
-    <p>Saturation (with Channel Length Modulation): \( I_D = -\frac{1}{2} \cdot \mu_p \cdot C_{ox} \cdot \frac{W}{L} \cdot (V_{SG} - |V_{th}|)^2 \cdot (1 + \lambda \cdot V_{SD}) \)</p>
-    <p>Linear (with Channel Length Modulation): \( I_D = -\mu_p \cdot C_{ox} \cdot \frac{W}{L} \cdot ((V_{SG} - |V_{th}|)V_{SD} - \frac{V_{SD}^2}{2}) \cdot (1 + \lambda \cdot V_{SD}) \)</p>
+
+    <h3>Subthreshold</h3>
+    <p>\( I_D = -I_0 \cdot e^{\frac{V_{SG} - |V_{th}|}{n \cdot V_T}} \cdot (1 - e^{-\frac{V_{SD}}{S \cdot V_T}}) \cdot (1 + \lambda \cdot V_{SD}) \)</p>
+
+    <h3>Saturation</h3>
+    <p>\( I_D = -\frac{1}{2} \cdot \mu_p \cdot C_{ox} \cdot \frac{W}{L} \cdot (V_{SG} - |V_{th}|)^2 \cdot (1 + \lambda \cdot V_{SD}) \)</p>
+    <p>Condition: \( V_{SD} \geq V_{SG} - |V_{th}| \)</p>
+
+    <h3>Linear</h3>
+    <p>\( I_D = -\mu_p \cdot C_{ox} \cdot \frac{W}{L} \cdot ((V_{SG} - |V_{th}|)V_{SD} - \frac{V_{SD}^2}{2}) \cdot (1 + \lambda \cdot V_{SD}) \)</p>
+    <p>Condition: \( V_{SD} < V_{SG} - |V_{th}| \)</p>
   </section>
+  
+  <section id="parameters">
+  <h2>Parameters Definition</h2>
+
+  <h3>\( \mu_n \) and \( \mu_p \)</h3>
+  <p>Electron and hole mobility, respectively. Dictate carrier speed.</p>
+
+  <h3>\( C_{ox} \)</h3>
+  <p>Oxide capacitance per unit area. Influences charge storage.</p>
+
+  <h3>\( W \) and \( L \)</h3>
+  <p>Channel width and length. Impact device characteristics.</p>
+
+  <h3>\( V_{th} \)</h3>
+  <p>Threshold voltage. Minimum \( V_{GS} \) or \( V_{SG} \) for conduction.</p>
+
+  <h3>\( \lambda \)</h3>
+  <p>Channel-length modulation parameter. Affects drain current.</p>
+
+  <h3>\( n \) and \( S \)</h3>
+  <p>Subthreshold swing coefficient and slope. Impact subthreshold current.</p>
+
+  <h3>\( V_T \)</h3>
+  <p>Thermal voltage, approx. 26mV at room temperature.</p>
+
+  <h3>\( I_0 \)</h3>
+  <p>Reverse saturation current. Sets subthreshold current scale.</p>
+</section>
+
 
 </body>
 </html>

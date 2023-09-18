@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Logic Tables</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Digital Logic Tables</h1>
+
+  <!-- 4-to-1 Multiplexer (MUX) -->
+  <h2>4-to-1 Multiplexer (MUX)</h2>
+  <table>
+    <tr>
+      <th>D0</th>
+      <th>D1</th>
+      <th>D2</th>
+      <th>D3</th>
+      <th>S1</th>
+      <th>S0</th>
+      <th>Output</th>
+    </tr>
+    <!-- Replace "x" with actual data if known -->
+    <tr><td>x</td><td>x</td><td>x</td><td>x</td><td>0</td><td>0</td><td>D0</td></tr>
+    <tr><td>x</td><td>x</td><td>x</td><td>x</td><td>0</td><td>1</td><td>D1</td></tr>
+    <tr><td>x</td><td>x</td><td>x</td><td>x</td><td>1</td><td>0</td><td>D2</td></tr>
+    <tr><td>x</td><td>x</td><td>x</td><td>x</td><td>1</td><td>1</td><td>D3</td></tr>
+  </table>
+
+  <!-- 1-to-4 Demultiplexer (DEMUX) -->
+  <h2>1-to-4 Demultiplexer (DEMUX)</h2>
+  <table>
+    <tr>
+      <th>Input</th>
+      <th>S1</th>
+      <th>S0</th>
+      <th>O0</th>
+      <th>O1</th>
+      <th>O2</th>
+      <th>O3</th>
+    </tr>
+    <!-- Replace "x" with actual data if known -->
+    <tr><td>x</td><td>0</td><td>0</td><td>x</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>x</td><td>0</td><td>1</td><td>0</td><td>x</td><td>0</td><td>0</td></tr>
+    <tr><td>x</td><td>1</td><td>0</td><td>0</td><td>0</td><td>x</td><td>0</td></tr>
+    <tr><td>x</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>x</td></tr>
+  </table>
+
+  <!-- 4-to-2 Encoder -->
+  <h2>4-to-2 Encoder</h2>
+  <table>
+    <tr>
+      <th>D0</th>
+      <th>D1</th>
+      <th>D2</th>
+      <th>D3</th>
+      <th>Output1</th>
+      <th>Output0</th>
+    </tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+  </table>
+
+  <!-- 2-to-4 Decoder -->
+  <h2>2-to-4 Decoder</h2>
+  <table>
+    <tr>
+      <th>Input1</th>
+      <th>Input0</th>
+      <th>O0</th>
+      <th>O1</th>
+      <th>O2</th>
+      <th>O3</th>
+    </tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+  </table>
+
+</body>
+</html>

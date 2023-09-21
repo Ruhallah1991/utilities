@@ -9,12 +9,62 @@
 
 <url>
   <loc>https://ruhallah1991.github.io/utilities/</loc>
-  <lastmod>2023-09-15T11:36:39+00:00</lastmod>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://ruhallah1991.github.io/utilities/rc_calculator.html</loc>
-  <lastmod>2023-09-15T11:36:39+00:00</lastmod>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/signal_and_noise_calculator.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/adc.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/dB_cal.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/mosfet_formulas.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/mosfet_smallsignal.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/logic_timing.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/rf_linearity.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/rf_noise.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/logics_and_flipflops.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/mux_code.html</loc>
+  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 

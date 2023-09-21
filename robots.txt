@@ -1,1 +1,4 @@
+User-agent: *
+Disallow:
+
 Sitemap: https://ruhallah1991.github.io/utilities/sitemap.xml

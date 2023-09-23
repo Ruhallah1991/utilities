@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Noise Calculator</title>
+  <script>
+    function calculateResistorNoise() {
+      const k = 1.380649e-23;
+      const T = parseFloat(document.getElementById('T').value);
+      const R = parseFloat(document.getElementById('R').value);
+      const Delta_f = parseFloat(document.getElementById('Delta_f').value);
+
+      const V_n = Math.sqrt(4 * k * T * R * Delta_f);
+      document.getElementById('V_n').innerText = `Thermal Noise: ${V_n.toExponential(8)} V/√Hz`;
+    }
+    
+    function calculateMOSFETChannelNoise() {
+      const k = 1.380649e-23;
+      const T = parseFloat(document.getElementById('T2').value);
+      const g_m = parseFloat(document.getElementById('g_m').value);
+      const gamma = parseFloat(document.getElementById('gamma').value);
+
+      const I_n_channel = Math.sqrt(4 * k * T * gamma * g_m);
+      document.getElementById('I_n_channel').innerText = `Channel Noise: ${I_n_channel.toExponential(8)} A/√Hz`;
+    }
+
+    function calculateFlickerNoise() {
+      const k_flicker = parseFloat(document.getElementById('k_flicker').value);
+      const W = parseFloat(document.getElementById('W').value);
+      const L = parseFloat(document.getElementById('L').value);
+      const C_ox = parseFloat(document.getElementById('C_ox').value);
+      const f = parseFloat(document.getElementById('f').value);
+
+      const V_n_flicker = Math.sqrt(k_flicker / (W * L * C_ox * f));
+      document.getElementById('V_n_flicker').innerText = `Flicker Noise: ${V_n_flicker.toExponential(8)} V/√Hz`;
+    }
+  </script>
+</head>
+<body>
+
+<h1>🔊 Noise Calculator 📊</h1>
+
+<h2>Resistor Noise</h2>
+Temperature (K): <input type="text" id="T"><br>
+Resistance (Ω): <input type="text" id="R"><br>
+Bandwidth (Hz): <input type="text" id="Delta_f"><br>
+<button onclick="calculateResistorNoise()">Calculate</button>
+<p id="V_n"></p>
+
+<h2>MOSFET Channel Noise</h2>
+Temperature (K): <input type="text" id="T2"><br>
+Transconductance (S): <input type="text" id="g_m"><br>
+Noise Coefficient: <input type="text" id="gamma"><br>
+<button onclick="calculateMOSFETChannelNoise()">Calculate</button>
+<p id="I_n_channel"></p>
+
+<h2>Flicker Noise</h2>
+Flicker Noise Constant: <input type="text" id="k_flicker"><br>
+Transistor Width (m): <input type="text" id="W"><br>
+Transistor Length (m): <input type="text" id="L"><br>
+Oxide Capacitance (F/m²): <input type="text" id="C_ox"><br>
+Frequency (Hz): <input type="text" id="f"><br>
+<button onclick="calculateFlickerNoise()">Calculate</button>
+<p id="V_n_flicker"></p>
+
+</body>
+</html>

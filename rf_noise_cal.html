@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Noise Calculator</title>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
   <script>
     function calculateResistorNoise() {
       const k = 1.380649e-23;
@@ -36,9 +39,22 @@
     }
   </script>
 </head>
+
+<h2>🌟 Example Parameters for 65nm CMOS 🌟</h2>
+<p>Here are some example parameters for 65nm CMOS technology:</p>
+<ul>
+  <li>Temperature (K): \( 300 \)</li>
+  <li>Transconductance (S): \( 2 \times 10^{-4} \)</li>
+  <li>Noise Coefficient: \( 2/3 \)</li>
+  <li>Flicker Noise Constant: \( 1 \times 10^{-25} \)</li>
+  <li>Transistor Width (m): \( 120 \times 10^{-9} \)</li>
+  <li>Transistor Length (m): \( 65 \times 10^{-9} \)</li>
+  <li>Oxide Capacitance (F/m²): \( 1 \times 10^{-2} \)</li>
+</ul>
+
 <body>
 
-<h1>🔊 Noise Calculator 📊</h1>
+<h1>Noise Calculator 📊</h1>
 
 <h2>Resistor Noise</h2>
 Temperature (K): <input type="text" id="T"><br>

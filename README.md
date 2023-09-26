@@ -11,6 +11,7 @@ utilities
 - [Evaluating ADC Parameters](./adc.html)
 - [Decibel Conversion and Analysis Tool: dB, dBm, dBV, dBc, dBu, and dBz](./dB_cal.html)
 - [Resistor and CMOS Noise Calculator](./rf_noise_cal.html)
+- [L and C reactance Calculator](./reactance.html)
 
 ## Formulas
 - [Mosfet Current Formulas](./mosfet_formulas.html)

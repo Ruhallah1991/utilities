@@ -33,6 +33,58 @@ Reactance (X): <input id="reactance" type="number" step="any"> Ω</input>
   Capacitance (C): <span id="capacitor"></span> F
 </p>
 
+  <h2>Formulas</h2>
+
+<p>
+  Inductive reactance:
+
+  \(X_L = 2\pi f L\)
+
+  where \(f\) is frequency in Hz and \(L\) is inductance in henries (H).
+</p>
+
+<p>
+  Capacitive reactance: 
+
+  \(X_C = \frac{1}{2\pi f C}\)
+
+  where \(f\) is frequency in Hz and \(C\) is capacitance in farads (F).
+</p>
+
+<p>
+  To calculate inductance:
+
+  \(L = \frac{X_L}{2\pi f}\)
+
+  where \(X_L\) is inductive reactance in ohms (\(\Omega\)) and \(f\) is frequency in Hz.
+</p>
+
+<p>
+  To calculate capacitance:
+
+  \(C = \frac{1}{2\pi f X_C}\)
+
+  where \(X_C\) is capacitive reactance in ohms (\(\Omega\)) and \(f\) is frequency in Hz.
+</p>
+
+<h2>Definitions</h2>
+
+<p>
+  <b>Inductive reactance</b> is the opposition to current flow through an inductor. It is proportional to inductance and frequency.
+</p>
+
+<p>
+  <b>Capacitive reactance</b> is the opposition to current flow through a capacitor. It is inversely proportional to capacitance and frequency. 
+</p>
+
+<p>
+  <b>Inductance (L)</b> is a property of an inductor and a measure of its ability to store energy in a magnetic field. Unit is henry (H).
+</p>
+
+<p>
+  <b>Capacitance (C)</b> is a property of a capacitor and a measure of its ability to store energy in an electric field. Unit is farad (F). 
+</p>
+
 <script>
 
 function calculateReactance() {

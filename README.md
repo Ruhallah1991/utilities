@@ -27,4 +27,4 @@ utilities
 ## Contact
 Follow me on [LinkedIn](https://www.linkedin.com/in/seyed-ruhallah-qasemi-29828513a/)
 
-Feel free to contribute to this project by opening an issue or creating a pull request. Check out the contributing guide for more info.
+Feel free to contribute to this project by opening an issue or creating a pull request.

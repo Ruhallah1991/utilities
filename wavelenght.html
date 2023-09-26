@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Transmission Line Length Calculator</title>
+  <title>Wavelength Calculator</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <script>
     function calculate() {
-      // Get the values from the form
       const c = parseFloat(document.getElementById('c').value);
       const f = parseFloat(document.getElementById('f').value);
       const L = parseFloat(document.getElementById('L').value);
 
-      // Calculate wavelength
       const wavelength = c / f;
       const wavelengthEng = wavelength.toExponential(3);
 
-      // Calculate electrical length
       const electricalLength = (2 * Math.PI * L) / wavelength;
       const electricalLengthEng = electricalLength.toExponential(3);
 
-      // Display results in engineering format
       document.getElementById('wavelength-result').innerHTML = `\\( \\lambda = ${wavelengthEng} \\, \\text{m} \\)`;
       document.getElementById('electrical-length-result').innerHTML = `\\( \\theta = ${electricalLengthEng} \\, \\text{rad} \\)`;
 
-      // Update MathJax
       MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
     }
   </script>
 </head>
 <body>
-  <h1>Transmission Line Length Calculator</h1>
+  <h1>Wavelength Calculator</h1>
+
+  <!-- Definitions Section -->
+  <h2>Definitions</h2>
+  <p>
+    <strong>Wavelength (\( \lambda \)):</strong> The distance over which a wave's shape repeats.
+  </p>
+  <p>
+    <strong>Electrical Length (\( \theta \)):</strong> The length of a transmission line, measured in electrical radians.
+  </p>
+
+  <!-- Parameter Dimensions Section -->
+  <h2>Parameter Dimensions</h2>
+  <p>
+    <strong>Speed of Light (\( c \)):</strong> Measured in meters per second (m/s).
+  </p>
+  <p>
+    <strong>Frequency (\( f \)):</strong> Measured in Hertz (Hz).
+  </p>
+  <p>
+    <strong>Physical Length (\( L \)):</strong> Measured in meters (m).
+  </p>
 
   <!-- Input Form -->
   <form onsubmit="event.preventDefault(); calculate();">

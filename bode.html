@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bode Plotter</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<h1>Bode Plotter</h1>
+
+<label for="pole1">Pole 1 Frequency (Hz):</label>
+<input type="number" id="pole1">
+<br>
+
+<label for="pole2">Pole 2 Frequency (Hz):</label>
+<input type="number" id="pole2">
+<br>
+
+<label for="zero1">Zero 1 Frequency (Hz):</label>
+<input type="number" id="zero1">
+<br>
+
+<label for="zero2">Zero 2 Frequency (Hz):</label>
+<input type="number" id="zero2">
+<br>
+
+<button onclick="plotBode()">Plot Bode</button>
+
+<div id="plotDiv"></div>
+
+<script>
+    function plotBode() {
+    var pole1 = parseFloat(document.getElementById('pole1').value);
+    var pole2 = parseFloat(document.getElementById('pole2').value);
+    var zero1 = parseFloat(document.getElementById('zero1').value);
+    var zero2 = parseFloat(document.getElementById('zero2').value);
+
+    var freqs = [];
+    var magnitudes = [];
+
+    for (let i = 1; i <= 1e6; i *= 1.05) {
+        let omega = 2 * Math.PI * i;
+        let magnitude = Math.sqrt(
+            (Math.pow(omega, 2) + Math.pow(zero1 * 2 * Math.PI, 2)) *
+            (Math.pow(omega, 2) + Math.pow(zero2 * 2 * Math.PI, 2)) /
+            ((Math.pow(omega, 2) + Math.pow(pole1 * 2 * Math.PI, 2)) *
+            (Math.pow(omega, 2) + Math.pow(pole2 * 2 * Math.PI, 2)))
+        );
+        freqs.push(i);
+        magnitudes.push(20 * Math.log10(magnitude));
+    }
+
+    var trace = {
+        x: freqs,
+        y: magnitudes,
+        type: 'scatter'
+    };
+
+    var layout = {
+        xaxis: {
+            type: 'log',
+            exponentformat: 'E'
+        },
+        yaxis: {
+            title: 'Magnitude (dB)'
+        },
+        title: 'Bode Plot'
+    };
+
+    Plotly.newPlot('plotDiv', [trace], layout);
+}
+
+</script>
+
+</body>
+</html>

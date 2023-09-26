@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reactance Calculator</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+<h1>Reactance Calculator</h1>
+
+<h2>Calculate Reactance</h2>
+
+Inductor (L): <input id="inductance" type="number" step="any"> H</input><br>
+Capacitor (C): <input id="capacitance" type="number" step="any"> F</input><br>
+Frequency (f): <input id="frequency" type="number" step="any"> Hz</input>
+<button onclick="calculateReactance()">Calculate</button>
+
+<p>
+  Inductive reactance (\(X_L\)): <span id="XL"></span> Ω<br>
+  Capacitive reactance (\(X_C\)): <span id="XC"></span> Ω
+</p>
+
+<h2>Calculate L and C</h2>
+
+Frequency (f): <input id="freq" type="number" step="any"> Hz</input><br>  
+Reactance (X): <input id="reactance" type="number" step="any"> Ω</input>
+<button onclick="calculateLC()">Calculate</button>
+
+<p>
+  Inductance (L): <span id="inductor"></span> H<br>
+  Capacitance (C): <span id="capacitor"></span> F
+</p>
+
+<script>
+
+function calculateReactance() {
+
+  var f = document.getElementById("frequency").value; 
+  var L = document.getElementById("inductance").value;
+  var C = document.getElementById("capacitance").value;
+
+  var XL = 2 * Math.PI * f * L;
+  var XC = 1 / (2 * Math.PI * f * C);
+
+  document.getElementById("XL").textContent = XL.toExponential(2);
+  document.getElementById("XC").textContent = XC.toExponential(2);
+
+}
+
+function calculateLC() {
+
+  var f = document.getElementById("freq").value;
+  var X = document.getElementById("reactance").value;  
+
+  var L = X / (2 * Math.PI * f);
+  var C = 1 / (2 * Math.PI * f * X);
+
+  document.getElementById("inductor").textContent = L.toExponential(2);
+  document.getElementById("capacitor").textContent = C.toExponential(2);
+
+}
+
+</script>
+
+</body>
+</html>

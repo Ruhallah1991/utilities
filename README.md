@@ -7,11 +7,12 @@ utilities
 
 ## Calculators
 - [RC Filter Calculator](./calculator/rc_cal.html)
-- [RMS and Peak to Peak Signal and Noise Calculator](./signal_and_noise_calculator.html)
-- [Evaluating ADC Parameters](./adc.html)
-- [Decibel Conversion and Analysis Tool: dB, dBm, dBV, dBc, dBu, and dBz](./cal/dB_cal.html)
-- [Resistor and CMOS Noise Calculator](./rf_noise_cal.html)
-- [L and C reactance Calculator](./reactance.html)
+- [RMS and Peak to Peak Signal and Noise Calculator](./calculator/sig_noise_cal.html)
+- [Evaluating ADC Parameters](./calculator/adc_cal.html)
+- [Decibel Conversion and Analysis Tool: dB, dBm, dBV, dBc, dBu, and dBz](./calculator/cal/db_cal.html)
+- [Resistor and CMOS Noise Calculator](./calculator/rf_noise_cal.html)
+- [L and C reactance Calculator](./calculator/react_cal.html)
+- [Wavelenght Calculator](./calculator/wave_cal.html)
 
 ## Formulas
 - [Mosfet Current Formulas](./mosfet_formulas.html)

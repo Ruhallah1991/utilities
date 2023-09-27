@@ -15,15 +15,15 @@ utilities
 - [Wavelenght Calculator](./calculator/wave_cal.html)
 
 ## Formulas
-- [Mosfet Current Formulas](./mosfet_formulas.html)
-- [Mosfet Small Signal Formulas](./mosfet_smallsignal.html)
-- [Digital Logic Timing Analysis](./logic_timing.html)
-- [RF CMOS Linearity Formulas](./rf_linearity.html)
-- [RF CMOS Noise Formulas](./rf_noise.html)
+- [Mosfet Current Formulas](./formula/mos_cur_form.html)
+- [Mosfet Small Signal Formulas](./formula/mos_smallsig_form.html)
+- [Digital Logic Timing Analysis](./formula/logic_time_form.html)
+- [RF CMOS Linearity Formulas](./formula/rf_lin_form.html)
+- [RF CMOS Noise Formulas](./formula/rf_noise_form.html)
 
 ## Tables
-- [Logic Functions and FlipFlops Truth Table](./logics_and_flipflops.html)
-- [MUX/DEMUX and Encoder/Decoder Truth Table](./mux_code.html)
+- [Logic Functions and FlipFlops Truth Table](./table/logics_ff_form.html)
+- [MUX/DEMUX and Encoder/Decoder Truth Table](./table/mux_code_form.html)
 
 ## Contact
 Follow me on [LinkedIn](https://www.linkedin.com/in/seyed-ruhallah-qasemi-29828513a/)

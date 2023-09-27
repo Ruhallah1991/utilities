@@ -9,7 +9,7 @@ utilities
 - [RC Filter Calculator](./rc_calculator.html)
 - [RMS and Peak to Peak Signal and Noise Calculator](./signal_and_noise_calculator.html)
 - [Evaluating ADC Parameters](./adc.html)
-- [Decibel Conversion and Analysis Tool: dB, dBm, dBV, dBc, dBu, and dBz](.cal//dB_cal.html)
+- [Decibel Conversion and Analysis Tool: dB, dBm, dBV, dBc, dBu, and dBz](./cal/dB_cal.html)
 - [Resistor and CMOS Noise Calculator](./rf_noise_cal.html)
 - [L and C reactance Calculator](./reactance.html)
 

@@ -6,7 +6,7 @@ utilities
 **Ruhallah's Utilities** is a toolkit for academics and enthusiasts in the field of mixed-signal integrated circuit design. The repository provides a variety of calculators, formulas, and tables that assist in different stages of circuit design.
 
 ## Calculators
-- [RC Filter Calculator](./utilities/calculator/rc_cal.html)
+- [RC Filter Calculator](/utilities/calculator/rc_cal.html)
 - [RMS and Peak to Peak Signal and Noise Calculator](./signal_and_noise_calculator.html)
 - [Evaluating ADC Parameters](./adc.html)
 - [Decibel Conversion and Analysis Tool: dB, dBm, dBV, dBc, dBu, and dBz](./cal/dB_cal.html)

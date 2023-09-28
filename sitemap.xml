@@ -9,62 +9,77 @@
 
 <url>
   <loc>https://ruhallah1991.github.io/utilities/</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/rc_calculator.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/calculator/rc_cal.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/signal_and_noise_calculator.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/calculator/sig_noise_cal.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/adc.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/calculator/adc_cal.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/dB_cal.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/calculator/db_cal.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/mosfet_formulas.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/calculator/rf_noise_cal.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/mosfet_smallsignal.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/calculator/react_cal.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/logic_timing.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/calculator/wave_cal.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/rf_linearity.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/formula/mos_cur_form.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/rf_noise.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/formula/mos_smallsig_form.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/logics_and_flipflops.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/formula/logic_time_form.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ruhallah1991.github.io/utilities/mux_code.html</loc>
-  <lastmod>2023-09-21T17:02:43+00:00</lastmod>
+  <loc>https://ruhallah1991.github.io/utilities/formula/rf_lin_form.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/formula/rf_noise_form.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/table/logics_ff_form.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ruhallah1991.github.io/utilities/table/mux_code_form.html</loc>
+  <lastmod>2023-09-27T11:29:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 

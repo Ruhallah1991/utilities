@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #333;
+  background-color: #e1e1e1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  border-radius: 5px;
+  background-color: #ccc;
+  margin-top: 20px;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+/* Media queries for mobile responsiveness */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  h1, h2 {
+    font-size: 1.5em;
+    padding: 5px;
+  }
+  nav ul li {
+    padding: 15px;
+  }
+}
+
+footer {
+  background-color: #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #0073b1; /* LinkedIn's brand color */
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+#centeredImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  height: auto; /* This will maintain the image's aspect ratio */
+}

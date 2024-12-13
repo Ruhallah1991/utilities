@@ -36,7 +36,7 @@
   </ul>
 
   <!-- Segment 1: Calculate with R and C -->
-  <h2>Calculate with Resistance and Capacitance</h2>
+  <h2>Calculate with R and C</h2>
   <label for="resistance">Resistance Value:</label>
   <input type="number" id="resistance1">
   <select id="res_unit1">
@@ -61,7 +61,7 @@
   <button onclick="calculateRC()">Calculate</button>
 
   <!-- Segment 2: Calculate with R and Frequency -->
-  <h2>Calculate with Resistance and Frequency</h2>
+  <h2>Calculate with R and Freq</h2>
   <label for="resistance">Resistance Value:</label>
   <input type="number" id="resistance2">
   <select id="res_unit2">
@@ -78,7 +78,7 @@
   <button onclick="calculateRF()">Calculate</button>
 
   <!-- Segment 3: Calculate with C and Frequency -->
-  <h2>Calculate with Capacitance and Frequency</h2>
+  <h2>Calculate with C and Freq</h2>
   <label for="capacitance">Capacitance Value:</label>
   <input type="number" id="capacitance3">
   <select id="cap_unit3">
@@ -98,6 +98,14 @@
   <p id="result"></p>
 
   <script>
+    function toEngineering(value) {
+      if (value === 0) return "0";
+      const exp = Math.floor(Math.log10(Math.abs(value)) / 3) * 3;
+      const scaled = value / Math.pow(10, exp);
+      const units = { "-12": "p", "-9": "n", "-6": "µ", "-3": "m", "0": "", "3": "k", "6": "M", "9": "G", "12": "T" };
+      return scaled.toFixed(3) + (units[exp] || ("e" + exp));
+    }
+
     function calculateRC() {
       var R = parseFloat(document.getElementById("resistance1").value);
       var C = parseFloat(document.getElementById("capacitance1").value);
@@ -117,12 +125,12 @@
         var time4tau = 4 * tau;
         var time5tau = 5 * tau;
 
-        var result = "Time Constant (τ): " + tau + " seconds<br>";
-        result += "Filter Corner Frequency: " + freq + " Hz<br>";
-        result += "Rise Time (10% to 90%): " + riseTime + " seconds<br>";
-        result += "Amplitude at 3τ: " + time3tau + " seconds, " + (100 - settling3tau).toFixed(2) + "% completed<br>";
-        result += "Amplitude at 4τ: " + time4tau + " seconds, " + (100 - settling4tau).toFixed(2) + "% completed<br>";
-        result += "Amplitude at 5τ: " + time5tau + " seconds, " + (100 - settling5tau).toFixed(2) + "% completed";
+        var result = "Time Constant (τ): " + toEngineering(tau) + " seconds<br>";
+        result += "Filter Corner Frequency: " + toEngineering(freq) + " Hz<br>";
+        result += "Rise Time (10% to 90%): " + toEngineering(riseTime) + " seconds<br>";
+        result += "Amplitude at 3τ: " + toEngineering(time3tau) + " seconds, " + (100 - settling3tau).toFixed(2) + "% completed<br>";
+        result += "Amplitude at 4τ: " + toEngineering(time4tau) + " seconds, " + (100 - settling4tau).toFixed(2) + "% completed<br>";
+        result += "Amplitude at 5τ: " + toEngineering(time5tau) + " seconds, " + (100 - settling5tau).toFixed(2) + "% completed";
 
         document.getElementById("result").innerHTML = result;
       } else {
@@ -140,9 +148,9 @@
         var C = tau / (R * R_unit);
         var riseTime = 2.2 * tau;
 
-        var result = "Capacitance (C): " + C + " Farads<br>";
-        result += "Time Constant (τ): " + tau + " seconds<br>";
-        result += "Rise Time (10% to 90%): " + riseTime + " seconds";
+        var result = "Capacitance (C): " + toEngineering(C) + " Farads<br>";
+        result += "Time Constant (τ): " + toEngineering(tau) + " seconds<br>";
+        result += "Rise Time (10% to 90%): " + toEngineering(riseTime) + " seconds";
 
         document.getElementById("result").innerHTML = result;
       } else {
@@ -160,9 +168,9 @@
         var R = tau / (C * C_unit);
         var riseTime = 2.2 * tau;
 
-        var result = "Resistance (R): " + R + " Ohms<br>";
-        result += "Time Constant (τ): " + tau + " seconds<br>";
-        result += "Rise Time (10% to 90%): " + riseTime + " seconds";
+        var result = "Resistance (R): " + toEngineering(R) + " Ohms<br>";
+        result += "Time Constant (τ): " + toEngineering(tau) + " seconds<br>";
+        result += "Rise Time (10% to 90%): " + toEngineering(riseTime) + " seconds";
 
         document.getElementById("result").innerHTML = result;
       } else {
